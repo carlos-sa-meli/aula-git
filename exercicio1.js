@@ -11,12 +11,41 @@ let products = [
     { name: 'Monitor', price: 200, quantity: 3, colors: [] },
 ]
 
+
+// 1 - OK
 function adicionaID() {
     products.forEach((element, index) => {
         element.id = index + 1;
     });
 }
-
 adicionaID();
 
-console.log(products);
+
+// 2 - OK
+function exibeNomes() {
+    products.map((element) => {
+        console.log(element.name)
+    });
+}
+exibeNomes();
+
+
+// 3 - OK
+const pesquisaID3 = products.filter((element) => {
+    return element.id === 3;
+});
+console.log(pesquisaID3);
+
+
+// 4 - OK
+const pesquisaCor = products.filter((element) => {
+    return element.colors.includes('black');
+});
+console.log(pesquisaCor);
+
+
+// 5 - OK
+const produtosSemCor = products.filter((element) => {
+    return element.colors.length === 0;
+});
+console.log(produtosSemCor);
